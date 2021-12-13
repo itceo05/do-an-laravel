@@ -1,0 +1,33 @@
+@extends('master')
+@section('main')
+    <section class="account-section bg_img" data-background="assets/images/account/account-bg.jpg">
+        <div class="container">
+            <div class="padding-top padding-bottom">
+                <div class="account-area">
+                    <div class="section-header-3">
+                        <span class="cate">welcome</span>
+                        <h2 class="title">to Boleto </h2>
+                        <p style="margin-top: 10px">Please enter your email you have registered!</p>
+                    </div>
+                    <form action="" class="account-form" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="pass1">Password<span>*</span></label>
+                            <input type="password" placeholder="Password" id="" name="password">
+                            @if ($errors->has('password'))
+                                <small class="err col-md-12">{{ $errors->first('password') }}</small>
+                            @endif
+                        </div>
+                        <div class="form-group">
+                            <label for="pass2">Confirm Password<span>*</span></label>
+                            <input type="password" placeholder="Password" id="" name="password_confirmation">
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="submit" value="Change">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+@stop
